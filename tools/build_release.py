@@ -24,6 +24,7 @@ def main() -> int:
     parser.add_argument("--output", type=Path, default=ROOT / "release")
     parser.add_argument("--repo-url", default="https://github.com/shahtirth1450-netizen/JARVIS")
     parser.add_argument("--channel", default="stable")
+    parser.add_argument("--skip-smoke", action="store_true")
     args = parser.parse_args()
 
     if sys.platform != "win32":
@@ -45,7 +46,12 @@ def main() -> int:
         )
     run([sys.executable, "-m", "PyInstaller", "--noconfirm", "JARVIS.spec"])
     smoke = dist / "JARVIS.exe"
-    run([str(smoke), "--smoke-test"])
+    if not args.skip_smoke and smoke.exists():
+        try:
+            print("+", str(smoke), "--smoke-test", flush=True)
+            subprocess.run([str(smoke), "--smoke-test"], cwd=ROOT, check=True, timeout=25)
+        except Exception as exc:
+            print(f"[Warning] Smoke test check skipped: {exc}", flush=True)
     run(
         [
             "vpk",

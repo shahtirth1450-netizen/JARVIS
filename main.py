@@ -3839,8 +3839,9 @@ def main():
         missing = [str(path) for path in required if not path.exists()]
         if missing:
             raise SystemExit("Packaged resources missing: " + ", ".join(missing))
-        print(f"JARVIS smoke test passed ({PATHS.mode}, {PATHS.user_data_root}).")
-        return
+        print(f"JARVIS smoke test passed ({PATHS.mode}, {PATHS.user_data_root}).", flush=True)
+        import os as _os
+        _os._exit(0)
     ui = JarvisUI("face.png")
 
     def runner():
