@@ -163,7 +163,7 @@ def _detect_vault() -> Path | None:
                 for depth2 in depth1.iterdir():
                     if depth2.is_dir() and (depth2 / ".obsidian").is_dir():
                         return depth2.resolve()
-        except PermissionError, OSError:
+        except (PermissionError, OSError):
             continue
     return None
 

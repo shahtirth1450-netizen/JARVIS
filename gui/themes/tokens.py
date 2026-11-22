@@ -68,8 +68,6 @@ _HUE_LINKED = (
 )
 _STATUS_COLORS = ("ACC", "ACC2", "GREEN", "GREEN_D", "RED", "MUTED_C")
 _STATUS_DEFAULTS = {key: getattr(C, key) for key in _STATUS_COLORS}
-from PyQt6.QtWebChannel import QWebChannel
-from PyQt6.QtWebEngineWidgets import QWebEngineView
 
 _PALETTE_DEFAULTS: dict[str, str] = {k: getattr(C, k) for k in _HUE_LINKED}
 DEFAULT_UI_COLOR = _PALETTE_DEFAULTS["PRI"]

@@ -22,7 +22,7 @@ def run(command: list[str], *, cwd: Path = ROOT) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=ROOT / "release")
-    parser.add_argument("--repo-url", default="https://github.com/RustamovAkrom/JARVIS")
+    parser.add_argument("--repo-url", default="https://github.com/black625/JARVIS")
     parser.add_argument("--channel", default="stable")
     args = parser.parse_args()
 
@@ -67,7 +67,7 @@ def main() -> int:
             "--outputDir",
             str(output),
             "--packAuthors",
-            "JARVIS",
+            "black625",
         ]
     )
     return 0

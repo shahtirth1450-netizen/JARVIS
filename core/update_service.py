@@ -20,8 +20,8 @@ from packaging.version import InvalidVersion, Version
 from core.runtime_paths import PATHS
 from core.version import APP_RELEASE_VERSION, RELEASE_CHANNEL
 
-GITHUB_REPOSITORY = "https://github.com/RustamovAkrom/JARVIS"
-LATEST_RELEASE_API = "https://api.github.com/repos/RustamovAkrom/JARVIS/releases/latest"
+GITHUB_REPOSITORY = "https://github.com/black625/JARVIS"
+LATEST_RELEASE_API = "https://api.github.com/repos/black625/JARVIS/releases/latest"
 _STABLE_TAG = re.compile(r"^v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$")
 
 
@@ -221,7 +221,7 @@ def format_release_date(value: str) -> str:
             .astimezone()
             .strftime("%Y-%m-%d %H:%M %Z")
         )
-    except ValueError, TypeError:
+    except (ValueError, TypeError):
         return value or "Unknown"
 
 

@@ -1,9 +1,9 @@
-# JARVIS
+# JARVIS — Made by black625
 
 ![JARVIS](assets/images/banner.png)
 
-[![Tests](https://github.com/RustamovAkrom/JARVIS/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/RustamovAkrom/JARVIS/actions/workflows/tests.yml?query=branch%3Amain)
-[![Windows release](https://img.shields.io/badge/Windows-Download-0078D4?logo=windows&logoColor=white)](https://github.com/RustamovAkrom/JARVIS/releases/latest)
+[![Tests](https://github.com/black625/JARVIS/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/black625/JARVIS/actions/workflows/tests.yml?query=branch%3Amain)
+[![Windows release](https://img.shields.io/badge/Windows-Download-0078D4?logo=windows&logoColor=white)](https://github.com/black625/JARVIS/releases/latest)
 [![macOS install](https://img.shields.io/badge/macOS-Install-000000?logo=apple&logoColor=white)](#install)
 [![Linux install](https://img.shields.io/badge/Linux-Install-FCC624?logo=linux&logoColor=black)](#install)
 
@@ -107,9 +107,9 @@ The setup script detects Windows, Linux, or macOS, installs the Python packages 
 **Windows (PowerShell):**
 
 ```powershell
-git clone https://github.com/RustamovAkrom/JARVIS.git
+git clone https://github.com/black625/JARVIS.git
 cd JARVIS
-py -3.14 -m venv .venv
+py -3.11 -m venv .venv
 .\.venv\Scripts\python.exe setup.py
 .\.venv\Scripts\python.exe main.py
 ```
@@ -117,7 +117,7 @@ py -3.14 -m venv .venv
 **Linux or macOS:**
 
 ```bash
-git clone https://github.com/RustamovAkrom/JARVIS.git
+git clone https://github.com/black625/JARVIS.git
 cd JARVIS
 python3 -m venv .venv
 .venv/bin/python setup.py
@@ -232,7 +232,7 @@ Set `JARVIS_PROFILE=shared` to make a source run use the installed profile. Set 
 
 ## Windows installer and updates
 
-Stable Windows releases are built on GitHub Actions when a commit is pushed to `main` that changes `pyproject.toml`. Set a new version there (for example, `1.0.7`) in the PR; after merge, the release workflow runs the complete test workflow, builds the Windows packages, and creates the matching GitHub Release. Release creation is restricted to `main`; pushing a tag from another branch cannot publish a release. Open [the latest release](https://github.com/RustamovAkrom/JARVIS/releases/latest) and choose the Windows download that suits you: the per-user `Setup.exe` installer or the Velopack portable package. Both support in-app verified updates. Source runs can check release notes but cannot replace their own files. Pushes to `main` and `v2` run the test workflow.
+Stable Windows releases are built on GitHub Actions when a commit is pushed to `main` that changes `pyproject.toml`. Set a new version there (for example, `1.1.0`) in the PR; after merge, the release workflow runs the complete test workflow, builds the Windows packages, and creates the matching GitHub Release. Release creation is restricted to `main`; pushing a tag from another branch cannot publish a release. Open [the latest release](https://github.com/black625/JARVIS/releases/latest) and choose the Windows download that suits you: the per-user `Setup.exe` installer or the Velopack portable package. Both support in-app verified updates. Source runs can check release notes but cannot replace their own files. Pushes to `main` and `v2` run the test workflow.
 
 Prebuilt release packages are currently published for Windows. macOS and Linux users can install from source using the platform instructions in [Quick start](#install); the setup script installs Python dependencies and browser runtimes.
 
@@ -258,9 +258,9 @@ On Windows, run `.venv\Scripts\python.exe -m unittest discover -s tests`. Tests 
 
 Actions are discovered from `actions/`; plugins declare a schema and handler in a module under `plugins/`. Plugin settings are optional, and plugin failures are reported in the interface. See [docs/plugins.md](docs/plugins.md) before adding an extension.
 
-## Support
+## Author & Support
 
-- **Telegram:** [@Akrom_Rustamov](https://t.me/Akrom_Rustamov)
-- **Portfolio:** [akrom-rustamov.vercel.app](https://akrom-rustamov.vercel.app/)
+- **Author:** Made by black625
+- **GitHub:** [black625](https://github.com/black625)
 
 When reporting a problem, include your operating system, Python version, and steps to reproduce it. Remove keys, tokens, private file contents, and personal data from logs and screenshots.

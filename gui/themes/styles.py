@@ -70,15 +70,15 @@ def menu_qss() -> str:
 def _card_qss(name: str) -> str:
     return (
         f"QWidget#{name} {{ background: {C.PANEL}; border: 1px solid {C.BORDER};"
-        f" border-radius: 8px; }}"
+        f" border-radius: 10px; }}"
     )
 
 
 def _ghost_qss() -> str:
     return (
         f"QPushButton {{ background: {C.PANEL2}; color: {C.TEXT_MED};"
-        f" border: 1px solid {C.BORDER}; border-radius: 5px; padding: 3px 12px; }}"
-        f"QPushButton:hover {{ background: {C.DARK}; color: {C.PRI}; border-color: {C.PRI_DIM}; }}"
+        f" border: 1px solid {C.BORDER}; border-radius: 6px; padding: 4px 14px; font-weight: 500; }}"
+        f"QPushButton:hover {{ background: {C.DARK}; color: {C.PRI}; border-color: {C.PRI}; }}"
         f"QPushButton:checked {{ background: {C.PRI_GHO}; color: {C.PRI}; border-color: {C.PRI}; }}"
         f"QPushButton:pressed {{ background: {C.PRI_GHO}; }}"
         f"QPushButton:disabled {{ background: {C.PANEL}; color: {C.TEXT_DIM}; border-color: {C.BORDER}; }}"
@@ -109,8 +109,8 @@ def _combo_qss() -> str:
 def _input_qss() -> str:
     return (
         f"QLineEdit {{ background: {C.PANEL2}; color: {C.WHITE}; border: 1px solid {C.BORDER};"
-        f" border-radius: 5px; padding: 4px 10px; selection-background-color: {C.PRI_GHO}; }}"
-        f"QLineEdit:focus {{ border: 1px solid {C.PRI}; }}"
+        f" border-radius: 6px; padding: 5px 12px; selection-background-color: {C.PRI_GHO}; selection-color: {C.PRI}; }}"
+        f"QLineEdit:focus {{ border: 1px solid {C.PRI}; background: {C.DARK}; }}"
     )
 
 

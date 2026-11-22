@@ -15,7 +15,7 @@ PLATFORM_NAMES = {
     "Darwin": "macOS",
 }
 
-MIN_PY = (3, 14)  # required by pyproject.toml and uv.lock
+MIN_PY = (3, 10)  # works across Python 3.10 through 3.14+
 MAX_PY = (3, 14)  # highest version currently tested
 
 

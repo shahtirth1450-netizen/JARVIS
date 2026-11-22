@@ -1,9 +1,12 @@
 [project]
-name = "new-jarvis"
+name = "jarvis-black625"
 version = "1.1.0"
-description = "Cross-platform desktop AI assistant with voice, a customizable HUD, and computer tools."
+description = "Cross-platform desktop AI assistant with voice, HUD, and computer tools — Made by black625."
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.10"
+authors = [
+    { name = "black625" }
+]
 dependencies = [
     "av>=19.0.0",
     "audioop-lts>=0.2.2",

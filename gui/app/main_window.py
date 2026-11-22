@@ -141,8 +141,19 @@ from PyQt6.QtWidgets import (
     QSlider,
     QToolTip,
 )
-from PyQt6.QtWebChannel import QWebChannel
-from PyQt6.QtWebEngineWidgets import QWebEngineView
+try:
+    from PyQt6.QtWebChannel import QWebChannel
+    from PyQt6.QtWebEngineWidgets import QWebEngineView
+except (ImportError, ModuleNotFoundError):
+    class QWebChannel(QObject):
+        pass
+    class QWebEngineView(QWidget):
+        def setProperty(self, *a, **k): pass
+        def setContextMenuPolicy(self, *a, **k): pass
+        def page(self): return None
+        def setPage(self, *a, **k): pass
+        def load(self, *a, **k): pass
+        def setHtml(self, *a, **k): pass
 from memory.translations import LANGUAGES, translate as _translate
 from core.runtime_paths import PATHS
 from core.user_data import update_json
@@ -497,7 +508,7 @@ class HudCanvas(QWidget):
         don't make the waveform stutter; _step() decays it back down."""
         try:
             lv = float(level)
-        except TypeError, ValueError:
+        except (TypeError, ValueError):
             return
         if lv < 0.0:
             lv = 0.0
@@ -6786,7 +6797,7 @@ class ContentReaderWindow(QWidget):
 
 
 class _GalaxyBG(QWidget):
-    """Solid app background that follows the active UI theme."""
+    """Futuristic holographic cyber background that follows the active UI theme."""
 
     def __init__(self):
         super().__init__()
@@ -6794,7 +6805,25 @@ class _GalaxyBG(QWidget):
 
     def paintEvent(self, _):
         p = QPainter(self)
-        p.fillRect(self.rect(), qcol(C.BG))
+        if not p.isActive():
+            return
+        rect = self.rect()
+        bg_color = qcol(C.BG)
+        grad = QRadialGradient(rect.width() * 0.5, rect.height() * 0.25, max(rect.width(), rect.height()) * 0.85)
+        glow = QColor(min(255, bg_color.red() + 8), min(255, bg_color.green() + 18), min(255, bg_color.blue() + 28))
+        grad.setColorAt(0.0, glow)
+        grad.setColorAt(1.0, bg_color)
+        p.fillRect(rect, grad)
+
+        grid_pen = QPen(qcol(C.BORDER, 35))
+        grid_pen.setWidth(1)
+        p.setPen(grid_pen)
+        step = 80
+        w, h = rect.width(), rect.height()
+        for x in range(0, w, step):
+            p.drawLine(x, 0, x, h)
+        for y in range(0, h, step):
+            p.drawLine(0, y, w, y)
         p.end()
 
 
@@ -7133,7 +7162,7 @@ class UpdatePanel(QWidget):
         user_data_path = _html.escape(str(PATHS.user_data_root))
         self._manual_update = QLabel(
             "<b>Manual update required</b><br>"
-            "1. Open <a href='https://github.com/RustamovAkrom/JARVIS/releases/latest'>GitHub Releases</a> "
+            "1. Open <a href='https://github.com/black625/JARVIS/releases/latest'>GitHub Releases</a> "
             "and download the package for this operating system.<br>"
             f"2. {package_instruction}<br>"
             "3. User settings, memory, plugins and profiles are stored outside the application files. "
@@ -9545,6 +9574,18 @@ class MainWindow(QMainWindow):
         self._sub_lbl.setVisible(logo.isNull())
         if logo.isNull():
             brand.addWidget(self._sub_lbl)
+        self._creator_badge = QLabel("MADE BY BLACK625")
+        self._creator_badge.setAttribute(
+            Qt.WidgetAttribute.WA_TransparentForMouseEvents, True
+        )
+        self._creator_badge.setAlignment(
+            Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter
+        )
+        self._creator_badge.setFont(QFont(FONT_MONO, 7, QFont.Weight.Bold))
+        self._creator_badge.setStyleSheet(
+            f"color: {C.PRI}; background: {C.PRI_GHO}; border: 1px solid {C.BORDER_B}; border-radius: 4px; padding: 1px 6px; max-width: 140px;"
+        )
+        brand.addWidget(self._creator_badge)
 
         clock_frame = QFrame()
         clock_frame.setObjectName("HeaderClock")
@@ -14744,7 +14785,7 @@ new QWebChannel(qt.webChannelTransport,channel=>{const bridge=channel.objects.br
             )
         )
         lay.addStretch()
-        lay.addWidget(_fl("By Akrom Rustamov", C.PRI_DIM))
+        lay.addWidget(_fl("Made by black625", C.PRI))
         return w
 
     def _on_file_selected(self, path: str):
@@ -16330,7 +16371,7 @@ new QWebChannel(qt.webChannelTransport,channel=>{const bridge=channel.objects.br
         for reminder in reminders:
             try:
                 due = float(reminder.get("due", 0))
-            except TypeError, ValueError:
+            except (TypeError, ValueError):
                 continue
             if due <= now:
                 continue

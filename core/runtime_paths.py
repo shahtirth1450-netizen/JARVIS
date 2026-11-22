@@ -135,6 +135,11 @@ def _resolve_paths(
         user_data_root = Path(explicit).expanduser().resolve()
     else:
         base = _local_data_root(env, system) / APP_ID
+        try:
+            base.mkdir(parents=True, exist_ok=True)
+        except (PermissionError, OSError):
+            import tempfile
+            base = Path(tempfile.gettempdir()) / APP_ID
         profile = env.get("JARVIS_PROFILE", "").strip()
         if (
             profile

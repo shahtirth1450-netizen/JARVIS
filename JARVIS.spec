@@ -76,6 +76,7 @@ exe = EXE(
     strip=False,
     upx=False,
     icon=str(root / "config" / "jarvis.ico"),
+    version=str(root / "file_version_info.txt"),
     console=False,
     disable_windowed_traceback=False,
 )

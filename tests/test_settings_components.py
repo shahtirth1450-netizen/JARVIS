@@ -418,7 +418,7 @@ class SettingsComponentTests(unittest.TestCase):
         saved = []
         page = AssistantIdentityPage(
             assistant_name="JARVIS",
-            user_name="Akrom",
+            user_name="black625",
             voice="Charon",
             voices=("Charon", "Kore"),
             apply_changes=lambda name, user, voice: saved.append((name, user, voice)) or True,
