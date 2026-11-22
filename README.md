@@ -95,34 +95,118 @@ Plugins run as Python code with the current user's permissions; they are not san
 
 ### Requirements
 
-- Python 3.14 or newer. Python 3.14 is the version currently tested by the project.
-- Windows, Linux, or macOS. Individual computer-control features vary by platform.
-- A Gemini API key for the default Gemini Live experience.
-- Internet access for package installation, hosted AI providers, and online integrations.
+- Python 3.10 - 3.14 (Python 3.11+ recommended).
+- Operating System: Windows 10/11, Linux, or macOS.
+- Internet connection & Gemini API key (free at [Google AI Studio](https://aistudio.google.com/)).
+- Optional for mobile (iOS / Android): Web browser connected to the same Wi-Fi network for the Web Dashboard.
 
-### Install
+---
 
-The setup script detects Windows, Linux, or macOS, installs the Python packages from `requirements.txt`, and downloads the Chromium and Firefox runtimes used by browser automation. Platform markers in the requirements file keep operating-system-specific Python packages off other platforms.
+## 🚀 Step-by-Step Installation & Download Guide
 
-**Windows (PowerShell):**
+### 1. 🪟 Windows Installation (CMD & PowerShell)
 
-```powershell
+#### Option A: Quick 1-Click Launch (Easiest)
+1. Clone or download the repository ZIP and extract it:
+   ```cmd
+   git clone https://github.com/black625/JARVIS.git
+   cd JARVIS
+   ```
+2. Double-click **`build_exe.bat`** to compile into a standalone `.exe`, OR
+3. Double-click **`run.bat`** to run JARVIS immediately!
+
+#### Option B: Windows Command Prompt (CMD)
+```cmd
+:: 1. Clone the repository
 git clone https://github.com/black625/JARVIS.git
 cd JARVIS
+
+:: 2. Create Python virtual environment
+python -m venv .venv
+
+:: 3. Activate virtual environment
+call .venv\Scripts\activate.bat
+
+:: 4. Install dependencies & browser engines
+python setup.py
+
+:: 5. Launch JARVIS
+python main.py
+```
+
+#### Option C: Windows PowerShell
+```powershell
+# 1. Clone the repository
+git clone https://github.com/black625/JARVIS.git
+cd JARVIS
+
+# 2. Create Python virtual environment
 py -3.11 -m venv .venv
+
+# 3. Run setup & install dependencies
 .\.venv\Scripts\python.exe setup.py
+
+# 4. Start JARVIS
 .\.venv\Scripts\python.exe main.py
 ```
 
-**Linux or macOS:**
+---
+
+### 2. 🐧 Linux Installation (Ubuntu, Debian, Fedora, Arch)
 
 ```bash
+# 1. Update system & install required packages (Debian/Ubuntu)
+sudo apt update && sudo apt install -y git python3 python3-pip python3-venv libasound2-dev libportaudio2
+
+# 2. Clone the repository
 git clone https://github.com/black625/JARVIS.git
 cd JARVIS
+
+# 3. Create virtual environment
 python3 -m venv .venv
-.venv/bin/python setup.py
-.venv/bin/python main.py
+source .venv/bin/activate
+
+# 4. Run automated setup
+python setup.py
+
+# 5. Launch JARVIS
+python main.py
 ```
+
+---
+
+### 3. 🍎 macOS Installation
+
+```bash
+# 1. Open Terminal and clone the repository
+git clone https://github.com/black625/JARVIS.git
+cd JARVIS
+
+# 2. Create virtual environment using Python 3
+python3 -m venv .venv
+source .venv/bin/activate
+
+# 3. Run setup script
+python setup.py
+
+# 4. Launch JARVIS
+python main.py
+```
+
+---
+
+### 4. 📱 iOS & Mobile Remote Dashboard (iPhone / iPad / Android)
+
+JARVIS features a built-in encrypted Web Dashboard that allows you to monitor and control JARVIS directly from your **iPhone, iPad, or mobile device**:
+
+1. Start JARVIS on your computer.
+2. In JARVIS settings or terminal, note your local IP address and dashboard port (default: `8000`).
+3. Open **Safari on your iPhone / iOS device** (connected to the same local Wi-Fi).
+4. Navigate to:
+   ```
+   http://<YOUR_COMPUTER_IP>:8000
+   ```
+5. Enter your authorization credentials to access real-time system metrics, chat history, and voice commands on mobile!
 
 The installer handles Python packages and browser runtimes. Some Linux desktop actions also rely on native utilities supplied by the distribution; the setup script prints guidance for those optional integrations rather than installing system packages with elevated privileges.
 
