@@ -38,8 +38,8 @@ datas.extend([
     (str(root / "config" / "jarvis.ico"), "config"),
 ])
 
-hiddenimports = []
-for package in ("actions", "plugins", "providers", "google.genai", "sounddevice"):
+hiddenimports = ["numpy", "PIL", "PyQt6"]
+for package in ("actions", "plugins", "providers", "google.genai", "sounddevice", "numpy", "PIL", "PyQt6"):
     try:
         excluded = {
             "plugins": {"plugins._template"},

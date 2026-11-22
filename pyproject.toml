@@ -8,8 +8,8 @@ authors = [
     { name = "black625" }
 ]
 dependencies = [
-    "av>=19.0.0",
-    "audioop-lts>=0.2.2",
+    "av>=14.0.0,<21",
+    "audioop-lts>=0.2.2 ; python_version >= '3.13'",
     "beautifulsoup4>=4.12,<5",
     "black>=26.10.0",
     "comtypes>=1.4.17 ; sys_platform == 'win32'",
