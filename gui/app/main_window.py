@@ -7162,7 +7162,7 @@ class UpdatePanel(QWidget):
         user_data_path = _html.escape(str(PATHS.user_data_root))
         self._manual_update = QLabel(
             "<b>Manual update required</b><br>"
-            "1. Open <a href='https://github.com/black625/JARVIS/releases/latest'>GitHub Releases</a> "
+            "1. Open <a href='https://github.com/shahtirth1450-netizen/JARVIS/releases/latest'>GitHub Releases</a> "
             "and download the package for this operating system.<br>"
             f"2. {package_instruction}<br>"
             "3. User settings, memory, plugins and profiles are stored outside the application files. "

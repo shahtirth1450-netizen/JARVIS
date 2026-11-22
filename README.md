@@ -2,8 +2,8 @@
 
 ![JARVIS](assets/images/banner.png)
 
-[![Tests](https://github.com/black625/JARVIS/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/black625/JARVIS/actions/workflows/tests.yml?query=branch%3Amain)
-[![Windows release](https://img.shields.io/badge/Windows-Download-0078D4?logo=windows&logoColor=white)](https://github.com/black625/JARVIS/releases/latest)
+[![Tests](https://github.com/shahtirth1450-netizen/JARVIS/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/shahtirth1450-netizen/JARVIS/actions/workflows/tests.yml?query=branch%3Amain)
+[![Windows release](https://img.shields.io/badge/Windows-Download-0078D4?logo=windows&logoColor=white)](https://github.com/shahtirth1450-netizen/JARVIS/releases/latest)
 [![macOS install](https://img.shields.io/badge/macOS-Install-000000?logo=apple&logoColor=white)](#install)
 [![Linux install](https://img.shields.io/badge/Linux-Install-FCC624?logo=linux&logoColor=black)](#install)
 
@@ -109,7 +109,7 @@ Plugins run as Python code with the current user's permissions; they are not san
 #### Option A: Quick 1-Click Launch (Easiest)
 1. Clone or download the repository ZIP and extract it:
    ```cmd
-   git clone https://github.com/black625/JARVIS.git
+   git clone https://github.com/shahtirth1450-netizen/JARVIS.git
    cd JARVIS
    ```
 2. Double-click **`build_exe.bat`** to compile into a standalone `.exe`, OR
@@ -118,7 +118,7 @@ Plugins run as Python code with the current user's permissions; they are not san
 #### Option B: Windows Command Prompt (CMD)
 ```cmd
 :: 1. Clone the repository
-git clone https://github.com/black625/JARVIS.git
+git clone https://github.com/shahtirth1450-netizen/JARVIS.git
 cd JARVIS
 
 :: 2. Create Python virtual environment
@@ -137,7 +137,7 @@ python main.py
 #### Option C: Windows PowerShell
 ```powershell
 # 1. Clone the repository
-git clone https://github.com/black625/JARVIS.git
+git clone https://github.com/shahtirth1450-netizen/JARVIS.git
 cd JARVIS
 
 # 2. Create Python virtual environment
@@ -159,7 +159,7 @@ py -3.11 -m venv .venv
 sudo apt update && sudo apt install -y git python3 python3-pip python3-venv libasound2-dev libportaudio2
 
 # 2. Clone the repository
-git clone https://github.com/black625/JARVIS.git
+git clone https://github.com/shahtirth1450-netizen/JARVIS.git
 cd JARVIS
 
 # 3. Create virtual environment
@@ -179,7 +179,7 @@ python main.py
 
 ```bash
 # 1. Open Terminal and clone the repository
-git clone https://github.com/black625/JARVIS.git
+git clone https://github.com/shahtirth1450-netizen/JARVIS.git
 cd JARVIS
 
 # 2. Create virtual environment using Python 3
@@ -316,7 +316,7 @@ Set `JARVIS_PROFILE=shared` to make a source run use the installed profile. Set 
 
 ## Windows installer and updates
 
-Stable Windows releases are built on GitHub Actions when a commit is pushed to `main` that changes `pyproject.toml`. Set a new version there (for example, `1.1.0`) in the PR; after merge, the release workflow runs the complete test workflow, builds the Windows packages, and creates the matching GitHub Release. Release creation is restricted to `main`; pushing a tag from another branch cannot publish a release. Open [the latest release](https://github.com/black625/JARVIS/releases/latest) and choose the Windows download that suits you: the per-user `Setup.exe` installer or the Velopack portable package. Both support in-app verified updates. Source runs can check release notes but cannot replace their own files. Pushes to `main` and `v2` run the test workflow.
+Stable Windows releases are built on GitHub Actions when a commit is pushed to `main` that changes `pyproject.toml`. Set a new version there (for example, `1.1.0`) in the PR; after merge, the release workflow runs the complete test workflow, builds the Windows packages, and creates the matching GitHub Release. Release creation is restricted to `main`; pushing a tag from another branch cannot publish a release. Open [the latest release](https://github.com/shahtirth1450-netizen/JARVIS/releases/latest) and choose the Windows download that suits you: the per-user `Setup.exe` installer or the Velopack portable package. Both support in-app verified updates. Source runs can check release notes but cannot replace their own files. Pushes to `main` and `v2` run the test workflow.
 
 Prebuilt release packages are currently published for Windows. macOS and Linux users can install from source using the platform instructions in [Quick start](#install); the setup script installs Python dependencies and browser runtimes.
 

@@ -137,6 +137,9 @@ def _resolve_paths(
         base = _local_data_root(env, system) / APP_ID
         try:
             base.mkdir(parents=True, exist_ok=True)
+            test_probe = base / ".probe_check"
+            test_probe.touch()
+            test_probe.unlink()
         except (PermissionError, OSError):
             import tempfile
             base = Path(tempfile.gettempdir()) / APP_ID
