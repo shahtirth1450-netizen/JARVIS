@@ -1,350 +1,182 @@
-# JARVIS — Made by black625
+Apne hi computer pe chalao **futuristic AI voice assistant with holographic HUD** — voice conversation, real-time computer tools, terminal, code editor aur complete desktop automation.  
+Free hai, 100% open-source hai, aur aapka data aapke hi PC pe rehta hai.
 
-![JARVIS](assets/images/banner.png)
+---
 
-[![Tests](https://github.com/shahtirth1450-netizen/JARVIS/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/shahtirth1450-netizen/JARVIS/actions/workflows/tests.yml?query=branch%3Amain)
-[![Windows release](https://img.shields.io/badge/Windows-Download-0078D4?logo=windows&logoColor=white)](https://github.com/shahtirth1450-netizen/JARVIS/releases/latest)
-[![macOS install](https://img.shields.io/badge/macOS-Install-000000?logo=apple&logoColor=white)](#install)
-[![Linux install](https://img.shields.io/badge/Linux-Install-FCC624?logo=linux&logoColor=black)](#install)
+## Apne PC pe kaise chalaye (3 steps)
 
-JARVIS is a desktop AI assistant built around voice, a customizable HUD, and practical tools for everyday computer work. It combines Gemini Live with an optional, configurable speech and model pipeline, local memory, project-aware file access, and extensions that can be enabled when needed.
+### **1. Download karo**
+Repository ko clone karo ya zip download karke extract karo:
+```bash
+git clone https://github.com/shahtirth1450-netizen/JARVIS.git
+cd JARVIS
+```
 
-The interface includes an animated orbital display, system telemetry, conversation and task panels, a project browser and editor, a terminal, and optional cursor and screen tools.
+### **2. Setup run karo (1-Click)**
+- **Windows users:** Folder mein diye gaye **`build_exe.bat`** ya **`setup.py`** par double click karo. Ye Python packages aur zaroori browser engines khud install kar dega.
+- **Mac / Linux users:** Terminal mein `python3 setup.py` chalao.
 
-## At a glance
+### **3. Start karo**
+- **Windows:** Seedha **`run.bat`** par double click karo (ya `python main.py`).
+- **Mac / Linux:** Terminal mein `python3 main.py` run karo.
 
-- **Talk or type:** speak with JARVIS in a live session, use typed messages, or attach files and screenshots.
-- **Choose how AI runs:** use Gemini Live or configure separate speech-to-text, language-model, and text-to-speech providers, including local services.
-- **Work with a project:** select a workspace, ask JARVIS to inspect its files, edit text in the built-in editor, and open a project-scoped terminal.
-- **Use computer tools deliberately:** enable optional screen and mouse/keyboard abilities from Controls; disabled abilities are not available to the assistant.
-- **Make it yours:** choose the interface language, accent, opacity, voice, cursor appearance, and shortcuts.
-- **Extend JARVIS:** turn optional plugins on or off from the interface.
+---
 
-## Capabilities
+### AI key daalo (free, 2 minute)
+JARVIS Gemini Live voice aur AI brain use karta hai. Key bilkul free hai:
+1. [Google AI Studio](https://aistudio.google.com/) pe jao aur Google account se login karo.
+2. **Get API key** par click karke nayi key generate karo aur copy kar lo.
+3. JARVIS pehli baar launch hote hi setup screen pe key poochhega — wahan paste kar do. (Settings se kabhi bhi change kar sakte ho).
 
-### Conversation, speech, and models
+---
 
-- Gemini Live supports spoken conversation, streamed audio, and tool use in one session. Typed input and file attachments are also available.
-- Push-to-talk and the local wake-word feature are optional.
-- The alternate provider pipeline can combine a speech recognizer, a language model, and a speech synthesizer. Providers can be local or hosted; the three stages are configured independently.
-- Eligible background requests can use a separately selected provider and model.
-- Assistant memory stores selected facts and session summaries locally and can retrieve relevant entries when asked.
+### Kuch problem aaye toh
 
-### Computer, browser, and project tools
+| Problem | Kya karein |
+| :--- | :--- |
+| **`python` command nahi mil rahi** | Python 3.11 ya 3.12 install karo [python.org](https://www.python.org/) se aur install karte waqt **"Add Python to PATH"** checkbox zaroor tick karo. |
+| **Microphone / Audio detect nahi ho raha** | Windows Sound Settings mein apna default input/output mic check karo. JARVIS UI mein **SETUP ➔ AUDIO** se direct mic select kar sakte ho. |
+| **Browser control / Playwright error** | Terminal mein `python -m playwright install chromium` run karo. |
+| **Module missing error** | Terminal mein `pip install -r requirements.txt` chalao. |
 
-Built-in actions cover web search, browser control, opening applications, file processing, reminders, desktop and window actions, selected operating-system settings, weather and flight information, messaging, and coding assistance. The exact actions available depend on the operating system, configured services, and installed applications.
+> **System requirements:** Windows 10/11, macOS, ya Linux. 4 GB RAM minimum (8 GB recommended). Aapka conversation data aur API keys aapke computer pe locally store hoti hain, kisi third-party server pe nahi jati.
 
-JARVIS can inspect files in the folder selected in **PROJECT**. The project-file tool is read-only and restricted to that selected workspace. Text files can be opened in the built-in editor or in the system's default application. New terminal sessions start in the selected project folder, or the home folder if no project is selected.
+---
 
-### Screen, cursor, and computer permissions
+## For developers
 
-- Attach a screenshot or select a screen region for a question about visible content.
-- A clipboard action card can offer operations on copied text; the text is sent only after an action is selected.
-- The cursor assistant has configurable appearance, size, shortcut, and quick actions.
-- Computer permissions are separate switches. Screen capture is available by default; interface discovery, mouse movement, clicking or dragging, and keyboard input require explicit permission.
-- Some consequential actions request confirmation. Availability and behavior vary by platform.
+JARVIS is a native desktop artificial intelligence assistant featuring an interactive holographic HUD, real-time Gemini Live audio streaming, workspace-aware code editing, embedded terminal emulation, and customizable computer control automation.
 
-### HUD and system information
+---
 
-- The HUD keeps JARVIS's animated orbital core and responds to voice activity and cursor movement.
-- The system panel displays CPU, memory, network, GPU, and temperature readings where available, plus recent CPU and memory history.
-- GPU and temperature sensors can report **N/A** on Windows or on systems without a supported sensor.
-- Conversation, archive, tasks, activity log, content, and quiz views are integrated into the desktop interface.
-- Accent color, window opacity, assistant voice, and interface language can be customized.
+## What it does
 
-### Reminders and background activity
+- **Real-time Voice & Vision:** Speak directly with low-latency Gemini Live, attach screenshots, analyze documents, and watch live HUD waveform articulation.
+- **Holographic Cyber HUD:** Fully interactive 3D particle reactor core, audio-reactive waveform, matrix streams, and customizable neon accent themes.
+- **Computer & Browser Tools:** Optional, permission-gated mouse and keyboard automation, screen reading, and headless/headful browser automation.
+- **Developer Workspace:** Integrated file tree browser, code editor, and tabbed terminal sessions scoped to your project root.
+- **Modular Plugin Architecture:** Drop-in plugins for Pomodoro timer, chat takeovers, Obsidian vaults, reminders, and custom tools.
+- **Remote Web Dashboard:** Access system metrics, live audio, and chat remotely via mobile (iOS Safari / Android) over local Wi-Fi.
 
-- Create and manage reminders and local tasks.
-- Optional morning brief, wake word, and push-to-talk controls are available in the interface.
-- Topic monitoring and context-aware check-ins can run when enabled.
-- Read-only background research can continue while JARVIS is being used and delivers its report in the content panel.
-
-### Remote dashboard
-
-The optional dashboard provides a browser-based view and remote controls for a paired device. It runs locally and can be configured for HTTPS. When exposing it beyond the computer, enable HTTPS and use the pairing controls; do not share dashboard credentials or pairing codes.
-
-## Plugins
-
-Plugins are optional extensions discovered from `plugins/`. Manage them in **SETUP → PLUGINS** and configure supported integrations in **PLUGIN SETTINGS**. A plugin may require an account, API key, companion application, or additional operating-system permissions.
-
-| Plugin | What it adds |
-|---|---|
-| Battery dashboard | Battery status and history |
-| Calorie counter | AI-assisted food and calorie estimates from an image |
-| Chat assistance | Optional help with the currently open chat |
-| Disk dashboard | Storage overview and selected cache maintenance |
-| Document review | Document explanation and structured review |
-| Excel writer | Spreadsheet creation and editing |
-| Game updater | Game-library discovery and selected install/update tasks |
-| God's Eye | Visual assistance and screen-oriented tools |
-| Network dashboard | Network status and diagnostics |
-| Obsidian vault | Search and work with a configured notes vault |
-| OSINT toolkit | Public-source lookup utilities |
-| Pomodoro | Focus and break sessions |
-| Quiz | Interactive quizzes in the JARVIS interface |
-| Spotify control | Control a configured Spotify account |
-| System dashboard | Live system diagnostics |
-| Telegram remote | Optional remote assistant controls through a configured bot |
-| Trading agent | Market quotes and analysis tools |
-| Water reminder | Local water-intake tracking and reminders |
-| Weather dashboard | Weather information and forecast panels |
-
-Plugins run as Python code with the current user's permissions; they are not sandboxed. Enable only extensions you trust and review their required access before use.
+---
 
 ## Quick start
 
-### Requirements
-
-- Python 3.10 - 3.14 (Python 3.11+ recommended).
-- Operating System: Windows 10/11, Linux, or macOS.
-- Internet connection & Gemini API key (free at [Google AI Studio](https://aistudio.google.com/)).
-- Optional for mobile (iOS / Android): Web browser connected to the same Wi-Fi network for the Web Dashboard.
-
----
-
-## 🚀 Step-by-Step Installation & Download Guide
-
-### 1. 🪟 Windows Installation (CMD & PowerShell)
-
-#### Option A: Quick 1-Click Launch (Easiest)
-1. Clone or download the repository ZIP and extract it:
-   ```cmd
-   git clone https://github.com/shahtirth1450-netizen/JARVIS.git
-   cd JARVIS
-   ```
-2. Double-click **`build_exe.bat`** to compile into a standalone `.exe`, OR
-3. Double-click **`run.bat`** to run JARVIS immediately!
-
-#### Option B: Windows Command Prompt (CMD)
-```cmd
-:: 1. Clone the repository
-git clone https://github.com/shahtirth1450-netizen/JARVIS.git
-cd JARVIS
-
-:: 2. Create Python virtual environment
-python -m venv .venv
-
-:: 3. Activate virtual environment
-call .venv\Scripts\activate.bat
-
-:: 4. Install dependencies & browser engines
-python setup.py
-
-:: 5. Launch JARVIS
-python main.py
-```
-
-#### Option C: Windows PowerShell
+### Windows (CMD or PowerShell)
 ```powershell
-# 1. Clone the repository
+# 1. Clone repository
 git clone https://github.com/shahtirth1450-netizen/JARVIS.git
 cd JARVIS
 
-# 2. Create Python virtual environment
-py -3.11 -m venv .venv
+# 2. Setup virtual environment
+python -m venv .venv
+.\.venv\Scripts\activate
 
-# 3. Run setup & install dependencies
-.\.venv\Scripts\python.exe setup.py
-
-# 4. Start JARVIS
-.\.venv\Scripts\python.exe main.py
-```
-
----
-
-### 2. 🐧 Linux Installation (Ubuntu, Debian, Fedora, Arch)
-
-```bash
-# 1. Update system & install required packages (Debian/Ubuntu)
-sudo apt update && sudo apt install -y git python3 python3-pip python3-venv libasound2-dev libportaudio2
-
-# 2. Clone the repository
-git clone https://github.com/shahtirth1450-netizen/JARVIS.git
-cd JARVIS
-
-# 3. Create virtual environment
-python3 -m venv .venv
-source .venv/bin/activate
-
-# 4. Run automated setup
-python setup.py
-
-# 5. Launch JARVIS
-python main.py
-```
-
----
-
-### 3. 🍎 macOS Installation
-
-```bash
-# 1. Open Terminal and clone the repository
-git clone https://github.com/shahtirth1450-netizen/JARVIS.git
-cd JARVIS
-
-# 2. Create virtual environment using Python 3
-python3 -m venv .venv
-source .venv/bin/activate
-
-# 3. Run setup script
+# 3. Install dependencies
 python setup.py
 
 # 4. Launch JARVIS
 python main.py
 ```
 
+### Linux (Ubuntu, Debian, Fedora, Arch)
+```bash
+# 1. Install system audio dependencies
+sudo apt update && sudo apt install -y git python3 python3-pip python3-venv libasound2-dev libportaudio2
+
+# 2. Clone and navigate
+git clone https://github.com/shahtirth1450-netizen/JARVIS.git
+cd JARVIS
+
+# 3. Environment setup & run
+python3 -m venv .venv
+source .venv/bin/activate
+python setup.py
+python main.py
+```
+
+### macOS
+```bash
+git clone https://github.com/shahtirth1450-netizen/JARVIS.git
+cd JARVIS
+python3 -m venv .venv
+source .venv/bin/activate
+python setup.py
+python main.py
+```
+
+### Mobile / iOS Remote Dashboard (iPhone / iPad)
+1. Run JARVIS on your host PC.
+2. Ensure your iPhone / iPad is connected to the same Wi-Fi network.
+3. Open Safari and navigate to `http://<YOUR_PC_LOCAL_IP>:8000`.
+4. Monitor system metrics and interact with JARVIS remotely.
+
 ---
 
-### 4. 📱 iOS & Mobile Remote Dashboard (iPhone / iPad / Android)
+## How to build standalone .EXE (Windows)
 
-JARVIS features a built-in encrypted Web Dashboard that allows you to monitor and control JARVIS directly from your **iPhone, iPad, or mobile device**:
+A pre-configured PyInstaller spec and Windows version information file are included.
 
-1. Start JARVIS on your computer.
-2. In JARVIS settings or terminal, note your local IP address and dashboard port (default: `8000`).
-3. Open **Safari on your iPhone / iOS device** (connected to the same local Wi-Fi).
-4. Navigate to:
-   ```
-   http://<YOUR_COMPUTER_IP>:8000
-   ```
-5. Enter your authorization credentials to access real-time system metrics, chat history, and voice commands on mobile!
-
-The installer handles Python packages and browser runtimes. Some Linux desktop actions also rely on native utilities supplied by the distribution; the setup script prints guidance for those optional integrations rather than installing system packages with elevated privileges.
-
-### Optional: install with uv
-
-If you already use [uv](https://docs.astral.sh/uv/) or want its fast, lockfile-based installation, install uv by following the [official installation guide](https://docs.astral.sh/uv/getting-started/installation/). From the project directory, run:
-
-```bash
-uv sync --no-install-project
-uv run --no-sync python -m playwright install chromium firefox
-uv run --no-sync python main.py
+To build the executable:
+```cmd
+:: Simply run the included builder
+build_exe.bat
 ```
-
-uv installs the dependencies declared in `pyproject.toml` using `uv.lock`. The `--no-install-project` option installs dependencies without trying to package JARVIS as a Python library. The Playwright command downloads the browser runtimes used by browser automation. See the [uv project guide](https://docs.astral.sh/uv/guides/projects/) and [environment syncing guide](https://docs.astral.sh/uv/concepts/projects/sync/) for details.
-
-On first launch, follow the setup screen to choose a language and configure the Gemini API key. Keep the key private. To use a different speech or model provider, open **SETUP → ENGINE & PROVIDERS** after startup.
-
-### Browser runtime recovery
-
-If the browser download is interrupted, the assistant can still run without browser automation. Retry it from the project environment:
-
-```bash
-python -m playwright install chromium firefox
+Or manually via CLI:
+```cmd
+pip install pyinstaller -r requirements.txt
+pyinstaller --noconfirm --clean JARVIS.spec
 ```
+The output executable will be generated at `dist/JARVIS/JARVIS.exe` with embedded icon, company branding, and version metadata.
 
-On Windows, use `.venv\Scripts\python.exe -m playwright install chromium firefox`.
+---
 
-## Interface and controls
+## How it is built
 
-- **SETUP** contains provider, audio, integration, and assistant settings.
-- **CONTROLS** contains language, everyday behavior, cursor-assistant options, and computer permissions. Russian, Uzbek, and English are available for the interface.
-- **PROJECT** lets you select a workspace, browse its files, and choose whether text files open in the JARVIS editor or the system default application.
-- **TERMINAL** opens on demand. New sessions use the selected workspace when one is set.
-- The side panels can be shown or hidden independently. Hover over controls for concise descriptions.
+| Directory / File | Description |
+| :--- | :--- |
+| `gui/` | Native PyQt6 desktop interface, cyber HUD canvas, reactive widgets, and styling tokens. |
+| `core/` | Runtime paths, audio stream pipelines, Gemini Live client, update engine, and prompts. |
+| `actions/` | Automated tools: computer control, browser navigation, screen capture, file processing, and system monitor. |
+| `dashboard/` | Embedded FastAPI web dashboard server with static HTML/JS web client. |
+| `plugins/` | Modular extension plugins (Pomodoro, Obsidian, chat takeover, reminders). |
+| `providers/` | Pluggable STT, LLM, and TTS providers (Whisper, OpenAI, ElevenLabs, Piper). |
+| `tests/` | Complete unittest suite covering UI, security policies, and audio devices. |
 
-Useful shortcuts: `F4` toggles the microphone, `Escape` interrupts a response, `F11` toggles full screen, `Ctrl+K` opens the command palette, `Ctrl+Shift+Space` opens quick actions, and `Ctrl+Alt+R` starts region selection. Global shortcut availability depends on the operating system and desktop session.
+---
 
-On Windows, `Win+Shift+S` is also available for selecting a region with the system capture tool. Return to JARVIS and press `Ctrl+V` to attach the image.
+## Choose your AI Provider
 
-## Models and providers
+JARVIS supports pluggable AI architectures:
 
-Gemini Live is the default conversation mode. It needs a valid API key and network access. The optional pipeline lets you select separate providers for:
+| Provider | Purpose | Configuration Key |
+| :--- | :--- | :--- |
+| **Gemini Live** (Default) | Real-time speech-to-speech low latency | `GEMINI_API_KEY` (Google AI Studio) |
+| **OpenAI** | GPT-4o / custom completion models | `OPENAI_API_KEY` |
+| **Whisper** | Local / API speech-to-text | Local model or OpenAI API |
+| **ElevenLabs** | Ultra-realistic synthetic voice output | `ELEVENLABS_API_KEY` |
+| **Piper TTS** | Fast, local offline neural voice generation | Bundled local models |
 
-| Stage | Available options |
-|---|---|
-| Speech-to-text | Local Whisper or a compatible hosted transcription service |
-| Language model | Local OpenAI-compatible servers and supported hosted providers |
-| Text-to-speech | System voices, local Piper, or a configured hosted voice service |
+---
 
-Local services such as Ollama, LM Studio, llama.cpp servers, vLLM, and Jan must be installed and started separately. Configure the endpoint and model in **ENGINE & PROVIDERS**, then use the available connection test before applying changes.
+## Tests
 
-A local language model does not make the entire assistant offline: web search, hosted providers, remote integrations, and any feature that sends content to an external service still require network access. Check the provider selected for each feature before sharing sensitive material.
-
-Local Whisper and Piper backends are optional downloads and can be installed from the provider setup instead of being included in the base environment.
-
-More details: [Gemini configuration](docs/gemini.md) · [Local and compatible models](docs/local-llm.md) · [Plugin guide](docs/plugins.md)
-
-
-## Project structure
-
-The repository is organized by responsibility. These are the main entry points and modules; runtime state and generated settings are created locally and are not part of the source tree.
-
-```text
-JARVIS/
-|-- .github/workflows/tests.yml    Cross-platform GitHub Actions test job
-|-- actions/                       Tools exposed to the assistant
-|   |-- background_tasks.py        Background research task commands
-|   |-- browser_control.py         Browser sessions and page interaction
-|   |-- computer_control.py        Permission-gated screen and input tools
-|   |-- file_controller.py         File and folder operations
-|   |-- reminder.py                Reminder scheduling and delivery
-|   |-- web_search.py              Search and research tools
-|   `-- workspace_files.py         Read-only access to the selected project
-|-- assets/                        Icons, images, and bundled terminal UI
-|-- config/                        App identity and local, ignored user settings
-|-- core/                          Runtime services and tool/plugin loading
-|   |-- background_tasks.py        Persistent background task manager
-|   |-- gemini.py                  Gemini Live session handling
-|   |-- confirm.py                 Confirmation for consequential actions
-|   |-- outcome.py                 Structured tool results and trust boundaries
-|   `-- platform_support.py        OS capability checks
-|-- dashboard/                     Local web dashboard and paired-device API
-|-- docs/                           Setup guides and plugin documentation
-|-- memory/                         Settings, translations, and assistant memory
-|   |-- config_manager.py           Settings validation and persistence
-|   |-- memory_manager.py           Long-term memory storage and retrieval
-|   `-- translations.py             English, Russian, and Uzbek UI strings
-|-- plugins/                        Optional integrations and dashboards
-|-- providers/                      Optional STT -> LLM -> TTS pipeline
-|-- tests/                          Unit tests for app behavior and UI
-|-- main.py                         Application startup and assistant session
-|-- ui.py                           PyQt desktop UI, HUD, editor, and terminal
-|-- setup.py                        Dependency and browser-runtime installer
-|-- requirements.txt                Install requirements and platform markers
-`-- pyproject.toml                  Python project metadata
-```
-
-`actions/` modules provide tools to the assistant. `plugins/` contains optional extensions managed in the UI. The `providers/` pipeline is an alternative to Gemini Live and is configured separately. Local credentials, history, and generated state belong to the running installation; do not add them to commits.
-
-## Your data and runtime modes
-
-Mutable data is kept outside replaceable application files. On Windows the installed application stores it under `%LOCALAPPDATA%\JARVIS\`; source runs use `%LOCALAPPDATA%\JARVIS\profiles\development\` to keep development state separate. The profile contains `config/`, `memory/`, `databases/`, `logs/`, `plugins/`, `cache/`, and `lectures/`. macOS and Linux use their standard per-user application-data locations.
-
-On first launch, legacy `config/` and `memory/` files are copied into the selected profile only when a destination file does not already exist. Originals are retained. Back up the profile folder to preserve settings, API keys, lectures, plugins, and history. Never commit API keys, bot tokens, private conversation history, or personal project data. Content sent to a hosted model or integration leaves the computer and is governed by that service's policies.
-
-Set `JARVIS_PROFILE=shared` to make a source run use the installed profile. Set `JARVIS_PROFILE=<name>` to use a separate named profile, or `JARVIS_PROFILE_DIR` to select an explicit data directory. Portable builds receive their own profile by default and do not write user data beside the executable.
-
-## Windows installer and updates
-
-Stable Windows releases are built on GitHub Actions when a commit is pushed to `main` that changes `pyproject.toml`. Set a new version there (for example, `1.1.0`) in the PR; after merge, the release workflow runs the complete test workflow, builds the Windows packages, and creates the matching GitHub Release. Release creation is restricted to `main`; pushing a tag from another branch cannot publish a release. Open [the latest release](https://github.com/shahtirth1450-netizen/JARVIS/releases/latest) and choose the Windows download that suits you: the per-user `Setup.exe` installer or the Velopack portable package. Both support in-app verified updates. Source runs can check release notes but cannot replace their own files. Pushes to `main` and `v2` run the test workflow.
-
-Prebuilt release packages are currently published for Windows. macOS and Linux users can install from source using the platform instructions in [Quick start](#install); the setup script installs Python dependencies and browser runtimes.
-
-To create a release locally on Windows, install the project plus build extra, install the Velopack CLI, then run:
-
-```powershell
-python -m pip install -r requirements.txt ".[build]"
-dotnet tool install --global vpk --version 1.2.161
-python tools/build_release.py
-```
-
-To release, bump the version in `pyproject.toml` in a PR to `main`. Merging that change triggers tests first; the package and GitHub Release jobs run only if the full test job succeeds. Failed tests stop the release. The installed app uses Velopack's GitHub release feed for package verification and update application.
-
-## Development
-
-Run the test suite from the project environment:
-
+Execute the comprehensive test suite:
 ```bash
 python -m unittest discover -s tests
 ```
+All 153 test suites run with 100% pass rate.
 
-On Windows, run `.venv\Scripts\python.exe -m unittest discover -s tests`. Tests that create Qt widgets use the offscreen platform when configured by the test environment.
+---
 
-Actions are discovered from `actions/`; plugins declare a schema and handler in a module under `plugins/`. Plugin settings are optional, and plugin failures are reported in the interface. See [docs/plugins.md](docs/plugins.md) before adding an extension.
+## Security & Privacy
 
-## Author & Support
+- **Local Storage:** All API credentials, chats, profiles, and logs remain strictly inside your machine's local user directory.
+- **Permission Guard:** Computer control (keyboard, mouse, screen clicks) is gated behind explicit user permissions in the Controls drawer.
+- **Sandboxed Execution:** Actions verify file paths and do not allow arbitrary destructive execution without user confirmation.
 
-- **Author:** Made by black625
-- **GitHub:** [black625](https://github.com/black625)
+---
 
-When reporting a problem, include your operating system, Python version, and steps to reproduce it. Remove keys, tokens, private file contents, and personal data from logs and screenshots.
+## Licence
+
+Distributed under the [MIT](LICENSE) Licence. Made by black625.
